@@ -10,10 +10,11 @@ isElementInList(X,[_|T]):-
 %Definitions for reverseList(List, ReversedList)
 
 %base case
-reverseList([],Z,Z).
+reverseList([],[]).
 
- reverseList([H|T],Z,Acc) :- 
-    reverseList(T,Z,[H|Acc]).
+reverseList([H|T], L):-
+    reverseList(T,Y),
+    mergeLists(Y,[H],L).
 
 
 %insertElementIntoListEnd(El, List, NewList)
